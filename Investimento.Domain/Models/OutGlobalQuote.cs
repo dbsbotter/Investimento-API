@@ -25,6 +25,11 @@ namespace Investimento.Domain.Models
         /// </summary>
         [JsonProperty("05. price")]
         public double Price { get; set; }
+
+        /// <summary>
+        /// Nota de aviso da API
+        /// </summary>
+        public string Note { get; set; }
     }
 
 }
