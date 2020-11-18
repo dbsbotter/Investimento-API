@@ -6,21 +6,21 @@ namespace Investimento.Domain.Validators
 {
     public class SessionValidator : AbstractValidator<SessionCommand>
     {
-        public SessionValidator(IUserRepository userRepository)
+        public SessionValidator()
         {
             RuleFor(x => x.Username)
                 .NotNull()
                 .WithName("Usuário")
-                .WithMessage("{PropertyName} deve ser informado")
+                .WithMessage("{PropertyName} deve ser informado.")
                 .NotEmpty()
-                .WithMessage("{PropertyName} deve ser informado");
+                .WithMessage("{PropertyName} deve ser informado.");
 
             RuleFor(x => x.Password)
                 .NotNull()
                 .WithName("Senha")
-                .WithMessage("{PropertyName} deve ser informado")
+                .WithMessage("{PropertyName} deve ser informado.")
                 .NotEmpty()
-                .WithMessage("{PropertyName} deve ser informado");
+                .WithMessage("{PropertyName} deve ser informado.");
         }
     }
 }

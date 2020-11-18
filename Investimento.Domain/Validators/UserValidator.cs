@@ -15,18 +15,18 @@ namespace Investimento.Domain.Validators
             RuleFor(x => x.Username)
                 .NotNull()
                 .WithName("Usuário")
-                .WithMessage("{PropertyName} deve ser informado")
+                .WithMessage("{PropertyName} deve ser informado.")
                 .NotEmpty()
-                .WithMessage("{PropertyName} deve ser informado")
+                .WithMessage("{PropertyName} deve ser informado.")
                 .MaximumLength(10)
-                .WithMessage("{PropertyName} deve ter no máximo {MaxLength}");
+                .WithMessage("{PropertyName} deve ter no máximo {MaxLength} caracteres.");
 
             RuleFor(x => x.Password)
                 .NotNull()
                 .WithName("Senha")
-                .WithMessage("{PropertyName} deve ser informado")
+                .WithMessage("{PropertyName} deve ser informado.")
                 .NotEmpty()
-                .WithMessage("{PropertyName} deve ser informado");
+                .WithMessage("{PropertyName} deve ser informado.");
 
             RuleFor(x => x.Username)
                 .MustAsync(async (username, cancellation) =>
@@ -34,7 +34,7 @@ namespace Investimento.Domain.Validators
                     bool exists = await _userRepository.UserExists(username);
 
                     return !exists;
-                }).WithMessage("Usuário já existe");
+                }).WithMessage("Este usuário já está em uso.");
         }
     }
 }
