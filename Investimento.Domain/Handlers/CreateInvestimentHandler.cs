@@ -35,10 +35,10 @@ namespace Investimento.Domain.Handlers
             var superiores = investiment.InvestimentItems.Where(x => x.Total > 50000).ToList();
 
             if (superiores.Count > 0)
-                throw new BusinessRuleValidationException(string.Join(Environment.NewLine, superiores.Select(x => $"{x.Ticker} é superior a R$ 50.000,00.")));
+                throw new BusinessRuleValidationException(string.Join(Environment.NewLine, superiores.Select(x => $"{x.Ticker} é superior a $50.000,00.")));
 
             if (investiment.Total > 50000)
-                throw new BusinessRuleValidationException("Investimento total não pode ser superior a R$ 50.000,00");
+                throw new BusinessRuleValidationException("Investimento total não pode ser superior a $50.000,00");
             #endregion
 
             return await _investimentRepository.Create(investiment);
