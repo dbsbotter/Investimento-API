@@ -89,7 +89,7 @@ namespace Investimento.Api
         {
             services.AddOptions();
             services.AddHttpContextAccessor();
-            services.AddDefaultCors();
+            services.AddDefaultCors(configuration);
             services.AddResponseCompression();
 
             services.AddApiVersioning(options =>
@@ -251,15 +251,21 @@ namespace Investimento.Api
 
     static class CorsServiceCollectionExtensions
     {
-        public static IServiceCollection AddDefaultCors(this IServiceCollection services)
+        public static IServiceCollection AddDefaultCors(this IServiceCollection services, IConfiguration configuration)
         {
+            var origins = configuration.GetValue<string>("Cors:Origins");
+
             services.AddCors(options =>
             {
                 options.AddDefaultPolicy(builder =>
                 {
                     builder.AllowAnyHeader()
-                           .AllowAnyMethod()
-                           .AllowAnyOrigin();
+                           .AllowAnyMethod();
+
+                    if (origins.Equals("*"))
+                        builder.AllowAnyOrigin();
+                    else
+                        builder.WithOrigins(origins);
                 });
             });
 
