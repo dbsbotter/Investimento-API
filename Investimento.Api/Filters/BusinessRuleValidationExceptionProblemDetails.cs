@@ -10,7 +10,7 @@ namespace Investimento.Api.Filters
             this.Title = exception.Message;
             this.Status = StatusCodes.Status400BadRequest;
             this.Detail = exception.Details;
-            this.Type = "https://httpstatuses.com/409";
+            this.Type = "https://httpstatuses.com/400";
         }
     }
 }

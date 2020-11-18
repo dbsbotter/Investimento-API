@@ -25,7 +25,7 @@ namespace Investimento.Api.Controllers
         }
 
         /// <summary>
-        /// Consultar todas os usuários
+        /// Consultar todos os usuários
         /// </summary>
         /// <returns>Retorna o objeto de retorno encapsulado no objeto 'data'.</returns>
         /// <response code="200">Retorna o resultado da operação</response>

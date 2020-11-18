@@ -19,6 +19,10 @@ namespace Investimento.Domain.Commands
         /// Descrição
         /// </summary>
         public string Description { get; set; }
+
+        /// <summary>
+        /// Lista de investimentos
+        /// </summary>
         public IEnumerable<InvestimentItemCommand> InvestimentItems { get; set; }
 
         public class InvestimentItemCommand
@@ -35,8 +39,17 @@ namespace Investimento.Domain.Commands
                 Amount = amount;
             }
 
+            /// <summary>
+            /// Código único da ação
+            /// </summary>
             public string Ticker { get; set; }
+            /// <summary>
+            /// Valor da ação
+            /// </summary>
             public double Quotation { get; set; }
+            /// <summary>
+            /// Quantidade de ações
+            /// </summary>
             public int Amount { get; set; }
         }
     }

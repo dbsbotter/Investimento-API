@@ -11,7 +11,14 @@ namespace Investimento.Domain.Models
             User = user;
         }
 
+        /// <summary>
+        /// Token JWT
+        /// </summary>
         public string Token { get; set; }
+
+        /// <summary>
+        /// Usuário
+        /// </summary>
         public User User { get; set; }
     }
 }

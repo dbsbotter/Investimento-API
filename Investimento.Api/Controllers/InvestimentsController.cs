@@ -41,7 +41,7 @@ namespace Investimento.Api.Controllers
         }
 
         /// <summary>
-        /// Realizar uma jogada de Investimento
+        /// Realizar a gravação de um novo Investimento
         /// </summary>
         /// <returns>Retorna o objeto de retorno encapsulado no objeto 'data'.</returns>
         /// <response code="200">Retorna o resultado da operação</response>

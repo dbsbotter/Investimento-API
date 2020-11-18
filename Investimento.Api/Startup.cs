@@ -231,8 +231,6 @@ namespace Investimento.Api
                 app.UseSwagger(options =>
                 {
                     options.RouteTemplate = "swagger/{documentName}/swagger.json";
-
-
                 });
 
                 app.UseSwaggerUI(options =>
@@ -253,10 +251,6 @@ namespace Investimento.Api
 
     static class CorsServiceCollectionExtensions
     {
-        /// <summary>
-        /// Configura opção default para CORS
-        /// <param name="services">Contrato para o pipeline de injeção de dependência</param>
-        /// </summary>
         public static IServiceCollection AddDefaultCors(this IServiceCollection services)
         {
             services.AddCors(options =>
@@ -266,7 +260,6 @@ namespace Investimento.Api
                     builder.AllowAnyHeader()
                            .AllowAnyMethod()
                            .AllowAnyOrigin();
-                    //.WithOrigins(origins);
                 });
             });
 
@@ -276,9 +269,6 @@ namespace Investimento.Api
 
     static class RouteConventionExtensions
     {
-        /// <summary>
-        /// Inclui o versionamento 'v{version:apiVersion}' nas rotas de todos os controllers.
-        /// </summary>
         public static void UseApiVersionRoute(this MvcOptions options)
         {
             string routeTemplate = "api/v{version:apiVersion}";

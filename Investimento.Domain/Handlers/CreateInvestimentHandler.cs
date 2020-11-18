@@ -31,7 +31,7 @@ namespace Investimento.Domain.Handlers
                                                                                                    x.Quotation,
                                                                                                    x.Amount)));
 
-            #region Bisiness
+            #region Business
             var superiores = investiment.InvestimentItems.Where(x => x.Total > 50000).ToList();
 
             if (superiores.Count > 0)
